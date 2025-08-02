@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIT THE HITLER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="backgroundAudio" autoplay loop muted>
+        <source src="./hiitler.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <header>
+        <h1>HIT THE HITLER</h1>
+        <a href="https://forms.gle/your-google-form-link-here8" class="register-btn">Register Now</a>
+    </header>
+    <div class="content">
+        <img src="./image.jpg" alt="HAIL HITLER!!" class="event-image">
+        <p>
+            → "If you tell a big enough lie and tell it frequently enough, it will be believed." <br>
+            → "Was there any form of filth or profligacy, particularly in cultural life, without at least one Jew involved in it? If you cut even cautiously into such an abscess, you found, like a maggot in a rotting body, often dazzled by the sudden light—a kike." <br>
+            → "Germany will either be a world power or will not be at all." <br>
+            → "He who would live must fight. He who does not wish to fight in this world, where permanent struggle is the law of life, has not the right to exist."<br>
+            → "And I can say with pride that I have also oriented my whole life and the conduct of my life to this one great thought: Germany." <br>
+        </p>
+    </div>
+    
+    <script>
+        const audio = document.getElementById('backgroundAudio');
+        function startAudio() {
+            audio.muted = false;
+            audio.play().catch(error => {
+                console.log('Audio autoplay failed:', error);
+            });
+        }
+        startAudio();
+        document.addEventListener('click', function() {
+            if (audio.paused) {
+                startAudio();
+            }
+        }, { once: true });
+        audio.addEventListener('ended', function() {
+            audio.currentTime = 0;
+            audio.play();
+        });
+        audio.addEventListener('error', function(e) {
+            console.log('Audio error:', e);
+        });
+    </script>
+</body>
+</html>
